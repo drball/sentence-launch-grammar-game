@@ -2,6 +2,8 @@ $green: green;
 $red: red;
 $transition-time: 200ms;
 $btn-bg: #A9FFD6;
+$images-path: "../images";
+$ground-height: 20%;
 
 html,
 body {
@@ -29,7 +31,7 @@ body {
     bottom: 0;
     left: 0;
     right: 0;
-    height: 20%;
+    height: $ground-height;
     background: rgb(145,164,173);
     background: linear-gradient(180deg, rgba(145,164,173,1) 0%, rgba(176,190,197,1) 35%);
 }
