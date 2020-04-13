@@ -13,6 +13,7 @@
     border-radius: 5px;
     cursor: pointer;
     transition: background $transition-time;
+    line-height: 1.2;
 
     @media (min-width: 1200px) {
         font-size: 80px;
@@ -28,4 +29,48 @@
 .character {
     width: 30px;
     height: 60px;
+}
+
+.start-instruction {
+    $bg: #D3DEEF;
+    font-size: 50px;
+    color: #277CCB;
+    text-align: center;
+    background: $bg;
+    border-radius: 100px;
+    padding: 20px;
+    position: relative;
+    width: 50%;
+    max-width: 1000px;
+    margin: 0 auto;
+    transform: translateX(-50%);
+
+    &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: -80px;
+        left: 50%;
+        width: 0;
+        height: 0;
+        border-left: 50px solid transparent;
+        border-right: 20px solid transparent;
+        border-top: 80px solid $bg;
+    }
+}
+
+.character-wrapper {
+    position: absolute;
+    bottom: 20%;
+    left: 50%;
+}
+
+.character {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 30px;
+    height: 50px;
+    background: green;
+    transform: translateX(-50%);
 }

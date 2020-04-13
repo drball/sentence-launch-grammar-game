@@ -45,7 +45,8 @@ function js() {
     var jsFiles = [
 
         // 3rd party libs
-        paths.npm + 'jquery/dist/jquery.js'
+        paths.npm + 'jquery/dist/jquery.js',
+        paths.js + '*.js'
     ];
 
     return gulp.src(jsFiles)
@@ -62,8 +63,8 @@ function setup() {
 }
 
 function watch() {
-    gulp.watch(paths.scss + '**/*.scss', gulp.series('css'));
-    gulp.watch(paths.js + '**/*.js', gulp.series('js'));
+    gulp.watch(paths.scss + '*.scss', gulp.series('css'));
+    gulp.watch(paths.js + '*.js', gulp.series('js'));
 }
 
 gulp.task('css', function() { return sass(); });
