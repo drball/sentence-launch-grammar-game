@@ -1,0 +1,31 @@
+.play-button {
+    display: inline-block;
+    background: $btn-bg;
+    color: #444444;
+    border: 0;
+    padding: 10px 80px;
+    font-size: 30px;
+    font-weight: normal;
+    position: absolute;
+    left: 50%;
+    bottom: 10%;
+    transform: translateX(-50%);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background $transition-time;
+
+    @media (min-width: 1200px) {
+        font-size: 80px;
+        padding: 20px 100px;
+    }
+
+    &:hover,
+    &:active {
+        background: darken($btn-bg,10%);
+    }
+}
+
+.character {
+    width: 30px;
+    height: 60px;
+}

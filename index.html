@@ -1,0 +1,53 @@
+<html>
+<head>
+    <title>Sentence Launch</title>
+    <link href="https://fonts.googleapis.com/css?family=Nunito:700|Russo+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <script src="/js/main.min.js" async></script>
+</head>
+<body>
+
+
+<div class="game">
+    <div class="sky"></div>
+
+    <div class="ground"></div>
+
+    <div class="screen screen-1">
+        <div class="character"></div>
+        <button class="play-button" onclick="playButtonPressed()">Play</button>
+    </div><!-- screen1 -->
+
+    <div class="screen screen-2">
+
+        <button class="menu-button" onclick="menuButtonPressed()">?</button>
+
+        <div class="question-container">
+            <p class="question"></p>
+
+            <div class="answers__container">
+                <h2 class="answers__title">What type of sentence is this?</h2>
+                <div class="answers">
+                    <button class="answer" data-type="Statement" onclick="answerPressed(this)">Statement</button>
+                    <button class="answer" data-type="Question" onclick="answerPressed(this)">Question</button>
+                    <button class="answer" data-type="Command" onclick="answerPressed(this)">Command</button>
+                    <button class="answer" data-type="Exclamation" onclick="answerPressed(this)">Exclamation</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="rocket">
+            <div class="rocket__inner"></div>
+        </div>
+
+        <div class="countdown">10</div>
+
+        <button class="reset-button" onclick="reset()">Play Again</button>
+    </div><!-- screen2 -->
+
+</div>
+
+
+
+</body>
+</html>

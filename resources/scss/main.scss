@@ -1,0 +1,64 @@
+$green: green;
+$red: red;
+$transition-time: 200ms;
+$btn-bg: #A9FFD6;
+
+html,
+body {
+    background: rgba(115,199,241,1);
+    overflow: hidden;
+    font-family: "Nunito",sans-serif;
+}
+
+.sky {
+    background: linear-gradient(180deg, rgba(39,150,211,1) 0%, rgba(115,199,241,1) 100%);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 70%;
+}
+
+.ground {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 20%;
+    background: rgb(145,164,173);
+    background: linear-gradient(180deg, rgba(145,164,173,1) 0%, rgba(176,190,197,1) 35%);
+}
+
+.screen {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: transform 350ms;
+
+    &-1 {
+        border: 4px solid green;
+
+        .game-active & {
+            transform: translateX(-100%);
+        }
+    }
+
+    &-2 {
+        border: 4px solid red;
+        transform: translateX(100%);
+
+        .game-active & {
+            transform: translateX(0);
+        }
+    }
+}
+
+
+@import
+"scene1";
+"scene2";
+"animations";
