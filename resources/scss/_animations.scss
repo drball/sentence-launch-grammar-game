@@ -11,6 +11,48 @@
     }
 }
 
+@keyframes move-from-right {
+    0% {
+        transform: translateX(100%);
+        //opacity: 1;
+    }
+    100% {
+        transform: translateX(0);
+        //opacity: 1;
+    }
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes fade-grow-in {
+    0% {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes pulse-out {
+    20% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: scale(1.2, 1.5);
+    }
+}
+
 @keyframes vibrate {
     0% {
         -webkit-transform: translate(0);

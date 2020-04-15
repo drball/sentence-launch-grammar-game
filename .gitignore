@@ -1,0 +1,27 @@
+# Created by .ignore support plugin (hsz.mobi)
+
+# IntelliJ project files
+.idea
+*.iml
+out
+gen
+
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# NPM/Gulp/Bower files #
+########################
+node_modules/
+bower_components/
+npm-debug.log
+.sass-cache/
+/vendor/
+
+/.env

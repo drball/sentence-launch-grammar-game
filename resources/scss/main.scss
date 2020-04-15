@@ -4,12 +4,14 @@ $transition-time: 200ms;
 $btn-bg: #A9FFD6;
 $images-path: "../images";
 $ground-height: 20%;
+$text-dark: #444;
+$sans-serif: "Nunito",sans-serif;
 
 html,
 body {
     background: rgba(115,199,241,1);
     overflow: hidden;
-    font-family: "Nunito",sans-serif;
+    font-family: $sans-serif;
     text-align: center;
     line-height: 1.2;
     font-size: 16px;

@@ -1,11 +1,16 @@
+$overlay-delay: 1s;
+$char-entrance-time: 1s;
+
 .play-button {
+    $bg: $btn-bg;
     display: inline-block;
     background: $btn-bg;
     color: #444444;
     border: 0;
     padding: 10px 80px;
     font-size: 30px;
-    font-weight: normal;
+    font-family: $sans-serif;
+    font-weight: bold;
     position: absolute;
     left: 50%;
     bottom: 10%;
@@ -14,10 +19,25 @@
     cursor: pointer;
     transition: background $transition-time;
     line-height: 1.2;
+    z-index: 1;
 
     @media (min-width: 1200px) {
         font-size: 80px;
         padding: 20px 100px;
+    }
+
+    &:after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: $bg;
+        animation: pulse-out 0.75s ease-out infinite;
+        z-index: -1;
+        border-radius: 5px;
     }
 
     &:hover,
@@ -37,13 +57,13 @@
     color: #277CCB;
     text-align: center;
     background: $bg;
-    border-radius: 100px;
+    border-radius: 50px;
     padding: 20px;
     position: relative;
-    width: 50%;
-    max-width: 1000px;
-    margin: 0 auto;
-    transform: translateX(-50%);
+    animation: fade-grow-in 200ms ease-out;
+    animation-delay: $overlay-delay + $char-entrance-time;
+    animation-fill-mode: forwards;
+    opacity: 0;
 
     &:after {
         content: "";
@@ -57,20 +77,44 @@
         border-right: 20px solid transparent;
         border-top: 80px solid $bg;
     }
+
+    &-wrapper {
+        width: 100%;
+        max-width: 1000px;
+        margin: 0 auto 120px;
+        transform: translateX(-50%);
+    }
 }
 
 .character-wrapper {
     position: absolute;
     bottom: $ground-height;
     left: 50%;
+    animation: move-from-right $char-entrance-time linear;
+    animation-fill-mode: both;
+    animation-delay: $overlay-delay;
+    //opacity: 0;
 }
 
 .character {
     position: absolute;
     bottom: 0;
-    left: 0;
+    left: 50px;
     width: 30px;
     height: 50px;
     background: green;
     transform: translateX(-50%);
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    animation: fade-in 1s linear;
+    animation-fill-mode: forwards;
 }

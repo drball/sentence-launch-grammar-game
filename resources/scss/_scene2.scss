@@ -39,14 +39,14 @@
 }
 
 .answer {
-    background: grey;
-    color: white;
+    background: $btn-bg;
+    color: $text-dark;
     margin: 0 10px 10px;
     padding: 20px;
     border-radius: 5px;
     font-size: 20px;
     font-weight: bold;
-    font-family: sans-serif;
+    font-family: $sans-serif;
     letter-spacing: 0.01em;
     border: 0;
     transition: 100ms;
@@ -55,7 +55,7 @@
 
     &:hover,
     &:active {
-        background-color: red;
+        background-color: darken($btn-bg,10%);
     }
 
     // &:after {
