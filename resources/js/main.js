@@ -94,7 +94,7 @@ function answerPressed(btn){
         console.log("thisis right!");
         $(btn).addClass("answer--right");
 
-        var countdown = $(".countdown");
+        var countdown = $("#countdown");
 
         console.log("countdown = "+countdown.text());
 

@@ -112,21 +112,8 @@
 }
 
 
-
-.countdown {
-    font-size: 40px;
-    text-align: center;
-    color: black;
-    line-height: 1;
-    position: absolute;
-    right: 100px;
-    top: 100px;
-}
-
 .rocket {
     $c: &;
-    width: 60px;
-    height: 0;
     position: absolute;
     bottom: 30%;
     right: 30px;
@@ -136,13 +123,25 @@
     }
 
     &__inner {
-        padding: 0 0 150%;
         background: url(#{$images-path}/rocket.svg) no-repeat center;
         background-size: contain;
+        width: 290px;
+        height: 0;
+        padding: 0 0 157.7%;
 
         #{$c}--active & {
             animation: vibrate 0.4s linear infinite both;
         }
+    }
+
+    &__countdown {
+        font-size: 40px;
+        text-align: center;
+        color: black;
+        line-height: 1;
+        position: absolute;
+        right: 100px;
+        top: 100px;
     }
 }
 
