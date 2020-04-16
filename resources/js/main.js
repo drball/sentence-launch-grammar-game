@@ -118,6 +118,10 @@ function answerPressed(btn){
     } else {
         console.log("This is wrong");
         $(btn).addClass("answer--wrong");
+
+        setTimeout(function() {
+            $(btn).removeClass("answer--wrong");
+        }, 1000);
     }
 }
 
