@@ -1,7 +1,7 @@
 
-
+//--launch rocket
 @keyframes rocket-launch-anim {
-    40% {
+    30% {
         -webkit-transform: translateY(0);
         transform: translateY(0);
     }
@@ -11,6 +11,7 @@
     }
 }
 
+//--move character in
 @keyframes move-from-right {
     0% {
         transform: translateX(100%);
@@ -42,6 +43,7 @@
     }
 }
 
+//--pulse the button bg element
 @keyframes pulse-out {
     20% {
         transform: scale(1);
@@ -53,6 +55,7 @@
     }
 }
 
+//--vibrate the launching rocket
 @keyframes vibrate {
     0% {
         transform: translate(0);
@@ -89,7 +92,7 @@
     }
 }
 
-//--shake wrong
+//--shake wrong answer
 @keyframes shake-wrong {
     0%,
     100% {
@@ -119,6 +122,7 @@
     }
 }
 
+//--flash the win message, end transparent
 @keyframes blink-in-out {
     0%,
     100% {
@@ -129,6 +133,7 @@
     }
 }
 
+//--flicker the flame
 @keyframes flicker {
     0% {
         opacity: 0.6;
@@ -162,5 +167,17 @@
     }
     100% {
         opacity: 1;
+    }
+}
+
+//--flashing the countdown
+@keyframes flash {
+
+    0%,
+    100%{
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
     }
 }

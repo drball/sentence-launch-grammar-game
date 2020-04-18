@@ -5,7 +5,7 @@
     right: 30px;
 
     &--active {
-        animation: rocket-launch-anim 10s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+        animation: rocket-launch-anim 9s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
     }
 
     &__inner {
@@ -26,19 +26,26 @@
         }
     }
 
+    &__countdown-wrapper {
+        position: absolute;
+        left: 50%;
+        top: 32%;
+        transform: translateX(-50%);
+    }
+
     &__countdown {
         font-size: 40px;
         text-align: center;
         color: white;
         line-height: 1;
-        position: absolute;
-        left: 50%;
-        top: 32%;
         font-weight: bold;
-        transform: translateX(-50%);
 
         @media (min-width: #{$breakpoint-medium}) {
             font-size: 74px;
+        }
+
+        &.flash {
+            animation: flash 175ms linear 5 both;
         }
     }
 

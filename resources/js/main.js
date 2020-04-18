@@ -51,7 +51,6 @@ function menuButtonPressed() {
 function startGame(){
     console.log("start");
     $(".countdown").text(10);
-    $(".question-container").addClass("question-container--active");
     $(".rocket").removeClass("rocket--active");
     showNewQuestion();
 }
@@ -81,6 +80,11 @@ function showNewQuestion(){
 
     });
 
+    //--fade the questions in
+    setTimeout(function() {
+        $(".question-container").addClass("question-container--active");
+    }, 1000);
+
 }
 
 $('.answer').click(function() {
@@ -92,19 +96,29 @@ $('.answer').click(function() {
 function answerPressed(btn){
 
     if($(btn).hasClass("answer--correct-answer")){
-        console.log("thisis right!");
+        //--correct answer was chosen
         $(btn).addClass("answer--right");
 
+        //--temporarily hide the questions
+        $(".question-container").removeClass("question-container--active");
+
         var countdown = $("#countdown");
-
-        console.log("countdown = "+countdown.text());
-
         var countdownNum = parseInt(countdown.text());
 
+        //--decrement the countdown & flash it
         countdown.text(countdownNum-1);
 
+        countdown.addClass("flash");
+
+        setTimeout(function() {
+            countdown.removeClass("flash");
+        }, 2000);
+
         if(countdownNum > 1){
-            showNewQuestion();
+            //--show a new question - after the animation is finished
+            setTimeout(function() {
+                showNewQuestion();
+            }, 250);
         } else {
             //--game completed
             console.log("lift off!");

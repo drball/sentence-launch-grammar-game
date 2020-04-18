@@ -19,10 +19,12 @@
     transition: opacity 400ms, transform 400ms;
     position: relative;
     z-index: 2;
+    pointer-events: none;
 
     &--active {
         opacity: 1 !important;
         transform: scale(1);
+        pointer-events: auto;
     }
 }
 
@@ -160,3 +162,11 @@
     }
 }
 
+.character-2 {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: $ground-height;
+    width: 77px;
+    height: auto;
+}
