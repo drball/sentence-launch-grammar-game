@@ -18,6 +18,7 @@ $(document).ready(function() {
 
     $(".reset-button").hide();
 
+
 });
 
 function playButtonPressed() {
@@ -112,6 +113,12 @@ function answerPressed(btn){
 
             setTimeout(function() {
                 $(".reset-button").show();
+            }, 100);
+
+            $(".win-message").addClass("win-message--active");
+
+            setTimeout(function() {
+                $(".win-message").removeClass("win-message--active");
             }, 100);
         }
 

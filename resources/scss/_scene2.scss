@@ -17,6 +17,8 @@
     opacity: 0;
     transform: scale(0.9);
     transition: opacity 400ms, transform 400ms;
+    position: relative;
+    z-index: 2;
 
     &--active {
         opacity: 1 !important;
@@ -111,41 +113,6 @@
     text-align: center;
 }
 
-
-.rocket {
-    $c: &;
-    position: absolute;
-    bottom: 30%;
-    right: 30px;
-
-    &--active {
-        animation: rocket-launch-anim 10s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
-    }
-
-    &__inner {
-        background: url(#{$images-path}/rocket.svg) no-repeat center;
-        background-size: contain;
-        width: 290px;
-        height: 0;
-        padding: 0 0 157.7%;
-
-        #{$c}--active & {
-            animation: vibrate 0.4s linear infinite both;
-        }
-    }
-
-    &__countdown {
-        font-size: 40px;
-        text-align: center;
-        color: black;
-        line-height: 1;
-        position: absolute;
-        right: 100px;
-        top: 100px;
-    }
-}
-
-
 .reset-button {
     $bg: yellow;
     display: inline-block;
@@ -162,9 +129,34 @@
     outline: 0;
     transition: background $transition-time;
     cursor: pointer;
+    z-index: 1;
 
     &:hover,
     &:active {
         background: darken($bg,10%);
     }
 }
+
+.win-message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 50px;
+    color: white;
+    font-family: $font-russo;
+    width: 100%;
+    max-width: calc(100% - 20px);
+    margin: 0 10px;
+    opacity: 0;
+
+    @media (min-width: #{$breakpoint-medium}) {
+        font-size: 100px;
+    }
+
+    &--active {
+        opacity: 1;
+        animation: blink-in-out 0.2s 10 forwards;
+    }
+}
+

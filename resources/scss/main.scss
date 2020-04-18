@@ -4,8 +4,11 @@ $transition-time: 200ms;
 $btn-bg: #A9FFD6;
 $images-path: "../images";
 $ground-height: 20%;
+$launchpad-height: 29px;
 $text-dark: #444;
-$sans-serif: "Nunito",sans-serif;
+$font-russo: 'Russo One', sans-serif;
+$font-nunito: "Nunito",sans-serif;
+$sans-serif: $font-nunito;
 $breakpoint-medium: 640px;
 $breakpoint-large: 1024px;
 $breakpoint-xlarge: 1200px;
@@ -39,6 +42,7 @@ body {
     height: $ground-height;
     background: rgb(145,164,173);
     background: linear-gradient(180deg, rgba(145,164,173,1) 0%, rgba(176,190,197,1) 35%);
+    z-index: 1;
 }
 
 .screen {
@@ -73,4 +77,5 @@ body {
 @import
 "scene1",
 "scene2",
+"rocket",
 "animations";

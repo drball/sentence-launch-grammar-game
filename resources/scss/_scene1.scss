@@ -117,4 +117,6 @@ $char-entrance-time: 1s;
     background: black;
     animation: fade-in 1s linear;
     animation-fill-mode: forwards;
+    z-index: 10;
+    pointer-events: none;
 }

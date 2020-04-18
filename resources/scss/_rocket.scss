@@ -1,0 +1,75 @@
+.rocket {
+    $c: &;
+    position: absolute;
+    bottom: calc(#{$ground-height} + #{$launchpad-height});
+    right: 30px;
+
+    &--active {
+        animation: rocket-launch-anim 10s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+    }
+
+    &__inner {
+        #{$c}--active & {
+            animation: vibrate 0.4s linear infinite both;
+        }
+    }
+
+    &__rocket {
+        background: url(#{$images-path}/rocket.svg) no-repeat center;
+        background-size: contain;
+        width: 290px;
+        height: 0;
+        padding: 0 0 157.7%;
+
+        #{$c}--active & {
+            animation: vibrate 0.4s linear infinite both;
+        }
+    }
+
+    &__countdown {
+        font-size: 40px;
+        text-align: center;
+        color: white;
+        line-height: 1;
+        position: absolute;
+        left: 50%;
+        top: 32%;
+        font-weight: bold;
+        transform: translateX(-50%);
+
+        @media (min-width: #{$breakpoint-medium}) {
+            font-size: 74px;
+        }
+    }
+
+    &__flame {
+        background: url(#{$images-path}/flame.svg) no-repeat top;
+        background-size: contain;
+        width: 86px;
+        height: 0;
+        padding: 0 0 100%;
+        transform: translateX(-50%);
+        position: absolute;
+        left: 50%;
+        top: 365px;
+        z-index: -1;
+        opacity: 0;
+
+        #{$c}--active & {
+            animation: flicker .6s infinite both;
+        }
+    }
+}
+
+.launchpad {
+    background: url(#{$images-path}/launchpad.svg) no-repeat center;
+    background-size: contain;
+    width: 320px;
+    height: 29px;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    bottom: $ground-height;
+    right: 10px;
+    z-index: 1;
+}
