@@ -10,7 +10,7 @@
 
     &__inner {
         #{$c}--active & {
-            animation: vibrate 0.4s linear infinite both;
+            animation: vibrate 0.3s linear infinite both;
         }
     }
 
@@ -20,10 +20,6 @@
         width: 290px;
         height: 0;
         padding: 0 0 157.7%;
-
-        #{$c}--active & {
-            animation: vibrate 0.4s linear infinite both;
-        }
     }
 
     &__countdown-wrapper {

@@ -112,7 +112,7 @@ function answerPressed(btn){
 
         setTimeout(function() {
             countdown.removeClass("flash");
-        }, 2000);
+        }, 900);
 
         if(countdownNum > 1){
             //--show a new question - after the animation is finished

@@ -15,8 +15,8 @@
     flex-direction: column;
     justify-content: space-evenly;
     opacity: 0;
-    transform: scale(0.9);
-    transition: opacity 400ms, transform 400ms;
+    transform: scale(0.96);
+    transition: opacity 150ms, transform 150ms;
     position: relative;
     z-index: 2;
     pointer-events: none;
@@ -25,6 +25,7 @@
         opacity: 1 !important;
         transform: scale(1);
         pointer-events: auto;
+        transition: opacity 400ms, transform 400ms;
     }
 }
 
