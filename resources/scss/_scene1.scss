@@ -53,12 +53,9 @@ $char-entrance-time: 1s;
 
 .start-instruction {
     $bg: #D3DEEF;
-    font-size: 50px;
-    color: #277CCB;
-    text-align: center;
     background: $bg;
     border-radius: 50px;
-    padding: 20px;
+    padding: 25px 35px;
     position: relative;
     animation: fade-grow-in 200ms ease-out;
     animation-delay: $overlay-delay + $char-entrance-time;
@@ -78,11 +75,33 @@ $char-entrance-time: 1s;
         border-top: 80px solid $bg;
     }
 
-    &-wrapper {
+    &__wrapper {
         width: 100%;
         max-width: 1000px;
         margin: 0 auto 120px;
         transform: translateX(-50%);
+    }
+
+    &__text-wrapper {
+        position: relative;
+    }
+
+    &__text {
+        font-size: 50px;
+        color: #277CCB;
+        text-align: left;
+        opacity: 0.1;
+        margin: 0;
+        padding: 0;
+    }
+
+    &__typewriter-text {
+        opacity: 1;
+        position: absolute;
+        top: 0;
+        left: 0;
+        color: red;
+        z-index: 1;
     }
 }
 

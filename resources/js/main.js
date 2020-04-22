@@ -18,7 +18,6 @@ $(document).ready(function() {
 
     $(".reset-button").hide();
 
-
 });
 
 function playButtonPressed() {
