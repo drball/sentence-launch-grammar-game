@@ -42,7 +42,12 @@
             <div class="answers__container">
                 <h2 class="answers__title">What type of sentence is this?</h2>
                 <div class="answers">
-                    <button class="answer" data-type="Statement" onclick="answerPressed(this)">Statement</button>
+                    <button class="answer" data-type="Statement" onclick="answerPressed(this)">
+                        <span class="answer__inner">
+                            <span class="answer__label">Statement</span>
+                            <span class="answer__correct"></span>
+                        </span>
+                    </button>
                     <button class="answer" data-type="Question" onclick="answerPressed(this)">Question</button>
                     <button class="answer" data-type="Command" onclick="answerPressed(this)">Command</button>
                     <button class="answer" data-type="Exclamation" onclick="answerPressed(this)">Exclamation</button>
