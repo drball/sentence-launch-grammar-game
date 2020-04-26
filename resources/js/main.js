@@ -1,18 +1,6 @@
 var questionNum = 0;
 
-var questions = [{
-    question: "The answer is 1",
-    answer: "Statement"
-}, {
-    question: "The answer is 2",
-    answer: "Question"
-}, {
-    question: "Answer is 3",
-    answer: "Command"
-}, {
-    question: "Answer is 4",
-    answer: "Exclamation"
-}];
+
 
 $(document).ready(function() {
 
@@ -86,17 +74,11 @@ function showNewQuestion(){
 
 }
 
-$('.answer').click(function() {
-
-    //--check answer
-    console.log($(this).data("type"));
-});
-
 function answerPressed(btn){
 
     if($(btn).hasClass("answer--correct-answer")){
         //--correct answer was chosen
-        $(btn).addClass("answer--right");
+        $(btn).addClass("answer--correct-chosen");
 
         //--temporarily hide the questions
         $(".question-container").removeClass("question-container--active");
@@ -117,7 +99,7 @@ function answerPressed(btn){
             //--show a new question - after the animation is finished
             setTimeout(function() {
                 showNewQuestion();
-            }, 250);
+            }, 1250);
         } else {
             //--game completed
             console.log("lift off!");

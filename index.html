@@ -42,15 +42,30 @@
             <div class="answers__container">
                 <h2 class="answers__title">What type of sentence is this?</h2>
                 <div class="answers">
-                    <button class="answer" data-type="Statement" onclick="answerPressed(this)">
+                    <button class="answer answer--correct-chosen" data-type="Statement" onclick="answerPressed(this)">
                         <span class="answer__inner">
                             <span class="answer__label">Statement</span>
                             <span class="answer__correct"></span>
                         </span>
                     </button>
-                    <button class="answer" data-type="Question" onclick="answerPressed(this)">Question</button>
-                    <button class="answer" data-type="Command" onclick="answerPressed(this)">Command</button>
-                    <button class="answer" data-type="Exclamation" onclick="answerPressed(this)">Exclamation</button>
+                    <button class="answer" data-type="Question" onclick="answerPressed(this)">
+                        <span class="answer__inner">
+                            <span class="answer__label">Question</span>
+                            <span class="answer__correct"></span>
+                        </span>
+                    </button>
+                    <button class="answer" data-type="Command" onclick="answerPressed(this)">
+                        <span class="answer__inner">
+                            <span class="answer__label">Command</span>
+                            <span class="answer__correct"></span>
+                        </span>
+                    </button>
+                    <button class="answer" data-type="Exclamation" onclick="answerPressed(this)">
+                        <span class="answer__inner">
+                            <span class="answer__label">Exclamation</span>
+                            <span class="answer__correct"></span>
+                        </span>
+                    </button>
                 </div>
             </div>
         </div>
