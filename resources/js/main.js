@@ -1,5 +1,5 @@
 var questionNum = 0;
-
+var correctAnimLength = 400;
 
 
 $(document).ready(function() {
@@ -44,11 +44,13 @@ function startGame(){
 
 function showNewQuestion(){
 
-    //--random question - but NOT the last one
+    console.log("show new question");
+
+    //--random question - but NOT the previous one
     questionNum = Math.floor(Math.random() * questions.length);
 
     //--show the question
-    $(".question").text(questionNum + questions[questionNum].question);
+    $(".question").text(questions[questionNum].question);
 
     //--set the answer
     $(".answer").each(function() {
@@ -80,42 +82,49 @@ function answerPressed(btn){
         //--correct answer was chosen
         $(btn).addClass("answer--correct-chosen");
 
-        //--temporarily hide the questions
-        $(".question-container").removeClass("question-container--active");
-
-        var countdown = $("#countdown");
-        var countdownNum = parseInt(countdown.text());
-
-        //--decrement the countdown & flash it
-        countdown.text(countdownNum-1);
-
-        countdown.addClass("flash");
-
         setTimeout(function() {
-            countdown.removeClass("flash");
-        }, 900);
 
-        if(countdownNum > 1){
-            //--show a new question - after the animation is finished
-            setTimeout(function() {
-                showNewQuestion();
-            }, 1250);
-        } else {
-            //--game completed
-            console.log("lift off!");
-            $(".rocket").addClass("rocket--active");
+            //--temporarily hide the questions
             $(".question-container").removeClass("question-container--active");
 
-            setTimeout(function() {
-                $(".reset-button").show();
-            }, 100);
+            var countdown = $("#countdown");
+            var countdownNum = parseInt(countdown.text());
 
-            $(".win-message").addClass("win-message--active");
+            //--decrement the countdown & flash it
+            countdown.text(countdownNum-1);
+
+            countdown.addClass("flash");
 
             setTimeout(function() {
-                $(".win-message").removeClass("win-message--active");
-            }, 100);
-        }
+                countdown.removeClass("flash");
+                console.log("remove flash");
+            }, 900);
+
+            console.log("another bit");
+
+            if(countdownNum > 1){
+                //--show a new question - after the animation is finished
+                console.log("set a new question in a bit");
+                setTimeout(function() {
+                    showNewQuestion();
+                }, 1250);
+            } else {
+                //--game completed
+                console.log("lift off!");
+                $(".rocket").addClass("rocket--active");
+                $(".question-container").removeClass("question-container--active");
+
+                setTimeout(function() {
+                    $(".reset-button").show();
+                }, 100);
+
+                $(".win-message").addClass("win-message--active");
+
+                setTimeout(function() {
+                    $(".win-message").removeClass("win-message--active");
+                }, 100);
+            }
+        }, correctAnimLength);
 
     } else {
         console.log("This is wrong");
