@@ -1,6 +1,6 @@
 var questionNum = 0;
 var correctAnimLength = 400;
-
+var totalQuestions = 2;
 
 $(document).ready(function() {
 
@@ -37,7 +37,7 @@ function menuButtonPressed() {
 
 function startGame(){
     console.log("start");
-    $(".countdown").text(10);
+    $(".countdown").text(totalQuestions);
     $(".rocket").removeClass("rocket--active");
     showNewQuestion();
 }
@@ -113,6 +113,7 @@ function answerPressed(btn){
                 console.log("lift off!");
                 $(".rocket").addClass("rocket--active");
                 $(".question-container").removeClass("question-container--active");
+                document.getElementById("rocket-launch-sfx").play();
 
                 setTimeout(function() {
                     $(".reset-button").show();
