@@ -50,7 +50,7 @@ function showNewQuestion(){
     questionNum = Math.floor(Math.random() * questions.length);
 
     //--show the question
-    $(".question").text(questions[questionNum].question);
+    $(".question").text("\"" + questions[questionNum].question + "\"");
 
     //--set the answer
     $(".answer").each(function() {

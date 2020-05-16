@@ -3,7 +3,7 @@ $red: red;
 $transition-time: 200ms;
 $btn-bg: #A9FFD6;
 $images-path: "../images";
-$ground-height: 20%;
+$ground-height: 30%;
 $launchpad-height: 29px;
 $text-dark: #444;
 $font-russo: 'Russo One', sans-serif;
@@ -23,6 +23,12 @@ body {
     font-size: 16px;
     margin: 0;
     padding: 0;
+}
+
+.game {
+    width: 100%;
+    height: 100%;
+    position: relative;
 }
 
 .sky {

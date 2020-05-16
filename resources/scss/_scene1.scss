@@ -7,21 +7,25 @@ $char-entrance-time: 1s;
     background: $btn-bg;
     color: #444444;
     border: 0;
-    padding: 10px 80px;
-    font-size: 30px;
+    padding: 20px 80px;
+    font-size: 60px;
     font-family: $sans-serif;
     font-weight: bold;
     position: absolute;
+    top: 50%;
     left: 50%;
-    bottom: 10%;
-    transform: translateX(-50%);
+    transform: translate(-50%, -50%);
     border-radius: 5px;
     cursor: pointer;
     transition: background $transition-time;
     line-height: 1.2;
     z-index: 1;
 
-    @media (min-width: 1200px) {
+    @media (min-width: $breakpoint-medium) {
+        //font-size: 60px;
+    }
+
+    @media (min-width: $breakpoint-large) {
         font-size: 80px;
         padding: 20px 100px;
     }
@@ -44,11 +48,17 @@ $char-entrance-time: 1s;
     &:active {
         background: darken($btn-bg,10%);
     }
-}
 
-.character {
-    width: 30px;
-    height: 60px;
+    &__wrapper {
+        //--centers the button in the ground
+        height: $ground-height;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        z-index: 1;
+    }
 }
 
 .start-instruction {
@@ -62,17 +72,28 @@ $char-entrance-time: 1s;
     animation-fill-mode: forwards;
     opacity: 0;
 
+    @media (min-width: $breakpoint-large) {
+        padding: 50px 70px;
+    }
+
     &:after {
+        //--speech arrow
         content: "";
         display: block;
         position: absolute;
-        bottom: -80px;
-        left: 50%;
+        bottom: -60px;
+        left: calc(50% + 30px);
         width: 0;
         height: 0;
-        border-left: 50px solid transparent;
-        border-right: 20px solid transparent;
-        border-top: 80px solid $bg;
+        border-left: 0 solid transparent;
+        border-right: 30px solid transparent;
+        border-top: 60px solid $bg;
+
+        @media (min-width: $breakpoint-large) {
+            bottom: -100px;
+            border-right: 60px solid transparent;
+            border-top: 100px solid $bg;
+        }
     }
 
     .char {
@@ -80,18 +101,27 @@ $char-entrance-time: 1s;
     }
 
     &__wrapper {
-        width: 100%;
-        max-width: 1000px;
-        margin: 0 auto 120px;
+        width: calc(100vw - 60px);
+        max-width: 600px;
+        margin: 0 auto 150px;
         transform: translateX(-50%);
+
+        @media (min-width: $breakpoint-large) {
+            margin-bottom: 180px;
+            max-width: 1040px;
+        }
     }
 
     &__text {
         color: #277CCB;
-        text-align: left;
-        font-size: 50px;
+        text-align: center;
+        font-size: 22px;
         margin: 0;
         padding: 0;
+
+        @media (min-width: $breakpoint-large) {
+            font-size: 50px;
+        }
     }
 }
 
@@ -99,7 +129,7 @@ $char-entrance-time: 1s;
     position: absolute;
     bottom: $ground-height;
     left: 50%;
-    animation: move-from-right $char-entrance-time linear;
+    animation: move-from-left $char-entrance-time linear;
     animation-fill-mode: both;
     animation-delay: $overlay-delay;
     //opacity: 0;
@@ -111,8 +141,10 @@ $char-entrance-time: 1s;
     left: 50px;
     width: 30px;
     height: 50px;
-    background: green;
+    background: url(#{$images-path}/astronaut.svg) no-repeat bottom;
+    background-size: contain;
     transform: translateX(-50%);
+
 }
 
 .overlay {

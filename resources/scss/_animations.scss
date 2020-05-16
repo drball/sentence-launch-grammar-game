@@ -12,9 +12,21 @@
 }
 
 //--move character in
-@keyframes move-from-right {
+//@keyframes move-from-right {
+//    0% {
+//        transform: translateX(100%);
+//        //opacity: 1;
+//    }
+//    100% {
+//        transform: translateX(0);
+//        //opacity: 1;
+//    }
+//}
+
+//--move character in
+@keyframes move-from-left {
     0% {
-        transform: translateX(100%);
+        transform: translateX(-100%);
         //opacity: 1;
     }
     100% {
