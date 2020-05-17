@@ -103,7 +103,7 @@ $char-entrance-time: 1s;
     &__wrapper {
         width: calc(100vw - 60px);
         max-width: 600px;
-        margin: 0 auto 150px;
+        margin: 0 auto 160px;
         transform: translateX(-50%);
 
         @media (min-width: $breakpoint-large) {
@@ -122,6 +122,11 @@ $char-entrance-time: 1s;
         @media (min-width: $breakpoint-large) {
             font-size: 50px;
         }
+
+        i {
+            color: #0AA259;
+            font-style: normal;
+        }
     }
 }
 
@@ -138,12 +143,16 @@ $char-entrance-time: 1s;
 .character {
     position: absolute;
     bottom: 0;
-    left: 50px;
-    width: 30px;
-    height: 50px;
+    left: 0;
+    width: 77px;
+    height: 106px;
     background: url(#{$images-path}/astronaut.svg) no-repeat bottom;
     background-size: contain;
     transform: translateX(-50%);
+
+    @media (min-width: $breakpoint-large) {
+
+    }
 
 }
 
@@ -160,4 +169,18 @@ $char-entrance-time: 1s;
     animation-fill-mode: forwards;
     z-index: 10;
     pointer-events: none;
+}
+
+.title {
+    color: white;
+    font-size: 50px;
+    text-align: center;
+    width: calc(100% - 20px);
+    margin: 20px auto;
+    font-family: $font-russo;
+    line-height: 1.2;
+
+    @media (min-width: $breakpoint-large) {
+        font-size: 100px;
+    }
 }

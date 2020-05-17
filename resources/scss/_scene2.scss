@@ -1,8 +1,12 @@
 .question {
-    font-size: 100px;
+    font-size: 40px;
     color: white;
     font-weight: bold;
     line-height: 1.2;
+
+    @media (min-width: $breakpoint-large) {
+        font-size: 100px;
+    }
 }
 
 .question-container {
