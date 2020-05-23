@@ -82,6 +82,12 @@ function answerPressed(btn){
         //--correct answer was chosen
         $(btn).addClass("answer--correct-chosen");
 
+        document.getElementById("correct-sfx").play();
+
+        setTimeout(function() {
+            $(btn).removeClass("answer--correct-chosen");
+        }, 1000);
+
         setTimeout(function() {
 
             //--temporarily hide the questions
@@ -130,8 +136,10 @@ function answerPressed(btn){
         }, correctAnimLength);
 
     } else {
-        console.log("This is wrong");
+        //--answer is wrong
         $(btn).addClass("answer--wrong");
+
+        document.getElementById("wrong-sfx").play();
 
         setTimeout(function() {
             $(btn).removeClass("answer--wrong");
