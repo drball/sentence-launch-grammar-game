@@ -2,7 +2,7 @@
   from = "/*"
   to = "/sentence-launch-game"
 
-# A redirect rule with all the supported properties
+
 [[redirects]]
-  from = "/old-path"
-  to = "/new-path"
+  from = "/game"
+  to = "/sentence-launch-game"

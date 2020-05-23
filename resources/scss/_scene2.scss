@@ -2,15 +2,26 @@
     font-size: 40px;
     color: white;
     font-weight: bold;
-    line-height: 1.2;
+    line-height: 1.05;
+    text-shadow: transparentize(black,0.9) 0 5px 5px;
+    letter-spacing: -0.02em;
+
+    @media (min-width: $breakpoint-medium) {
+        font-size: 60px;
+    }
 
     @media (min-width: $breakpoint-large) {
+        font-size: 80px;
+    }
+
+    @media (min-width: $breakpoint-xlarge) {
         font-size: 100px;
     }
 }
 
 .question-container {
-    max-width: 800px;
+    width: 90vw;
+    max-width: 1200px;
     margin: 1rem auto 1rem;
     padding: 0 1rem;
     height: 100%;
@@ -33,6 +44,16 @@
     }
 }
 
+.answers-container {
+    width: 100%;
+    max-width: 800px;
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+
 .answers {
     display: flex;
     text-align: center;
@@ -49,10 +70,6 @@
         color: white;
         text-align: center;
         margin: 1rem auto 1.5rem;
-    }
-
-    &__container {
-        width: 100%;
     }
 }
 

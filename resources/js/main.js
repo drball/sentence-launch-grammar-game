@@ -1,11 +1,9 @@
 var questionNum = 0;
 var correctAnimLength = 400;
-var totalQuestions = 2;
+var totalQuestions = 10;
 
 $(document).ready(function() {
-
     $(".reset-button").hide();
-
 });
 
 function playButtonPressed() {
@@ -13,6 +11,8 @@ function playButtonPressed() {
     console.log("pressed");
 
     var game = $(".game");
+
+    document.getElementById("button-click-sfx").play();
 
     if(!game.hasClass("game-active")){
 
@@ -89,10 +89,10 @@ function answerPressed(btn){
 
             var countdown = $("#countdown");
             var countdownNum = parseInt(countdown.text());
+            var newCountdownNum = countdownNum - 1;
 
             //--decrement the countdown & flash it
-            countdown.text(countdownNum-1);
-
+            countdown.text(newCountdownNum);
             countdown.addClass("flash");
 
             setTimeout(function() {
@@ -100,7 +100,9 @@ function answerPressed(btn){
                 console.log("remove flash");
             }, 900);
 
-            console.log("another bit");
+            //--play the appropriate countdown sfx
+            console.log("play sfx "+countdownNum);
+            document.getElementById("countdown-"+newCountdownNum+"-sfx").play();
 
             if(countdownNum > 1){
                 //--show a new question - after the animation is finished
