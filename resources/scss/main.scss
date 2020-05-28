@@ -5,6 +5,7 @@ $btn-bg: #A9FFD6;
 $images-path: "../images";
 $ground-height: 30%;
 $launchpad-height: 29px;
+$sky-bg: linear-gradient(180deg, rgba(39,150,211,1) 0%, rgba(115,199,241,1) 100%);
 $text-dark: #444;
 $font-russo: 'Russo One', sans-serif;
 $font-nunito: "Nunito",sans-serif;
@@ -25,6 +26,35 @@ body {
     padding: 0;
 }
 
+.rotate-message {
+    display: none;
+
+    @media (max-width: #{$breakpoint-medium}) and (orientation: portrait) {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: $sky-bg;
+        z-index: 100;
+
+        &:after {
+            display: block;
+            content: "";
+            width: 221px;
+            height: 190px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+            background: url(#{$images-path}/tilted-phone.svg) no-repeat;
+            background-size: contain;
+        }
+    }
+}
+
 .game {
     width: 100%;
     height: 100%;
@@ -32,7 +62,7 @@ body {
 }
 
 .sky {
-    background: linear-gradient(180deg, rgba(39,150,211,1) 0%, rgba(115,199,241,1) 100%);
+    background: $sky-bg;
     position: absolute;
     top: 0;
     left: 0;
@@ -92,6 +122,8 @@ body {
 .sr-only {
     @include sr-only;
 }
+
+
 
 
 @import

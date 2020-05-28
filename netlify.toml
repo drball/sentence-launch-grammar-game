@@ -1,8 +1,9 @@
 [[redirects]]
+  from = "/game"
+  to = "/sentence-launch-game"
+
+[[redirects]]
   from = "/*"
   to = "/sentence-launch-game"
 
 
-[[redirects]]
-  from = "/game"
-  to = "/sentence-launch-game"
