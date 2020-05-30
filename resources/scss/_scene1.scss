@@ -5,7 +5,7 @@ $char-entrance-time: 1s;
     $bg: $btn-bg;
     display: inline-block;
     background: $btn-bg;
-    color: #444444;
+    color: #444;
     border: 0;
     padding: 10px 40px;
     font-size: 30px;
@@ -21,11 +21,7 @@ $char-entrance-time: 1s;
     line-height: 1;
     z-index: 1;
 
-    @media (min-width: $breakpoint-medium) {
-        //font-size: 60px;
-    }
-
-    @media (min-width: $breakpoint-medium) {
+    @media (min-width: $breakpoint-medium) and (min-height: $tall-up) {
         font-size: 80px;
         padding: 20px 100px;
     }
@@ -72,7 +68,7 @@ $char-entrance-time: 1s;
     animation-fill-mode: forwards;
     opacity: 0;
 
-    @media (min-width: $breakpoint-medium) {
+    @media (min-width: $breakpoint-medium) and (min-height: $tall-up) {
         padding: 20px 30px;
         border-radius: 50px;
     }
@@ -90,11 +86,7 @@ $char-entrance-time: 1s;
         border-right: 10px solid transparent;
         border-top: 20px solid $bg;
 
-        @media (min-width: $breakpoint-medium) {
-
-        }
-
-        @media (min-width: $breakpoint-large) {
+        @media (min-width: $breakpoint-large) and (min-height: $tall-up) {
             bottom: -60px;
             border-right: 40px solid transparent;
             border-top: 60px solid $bg;
@@ -112,11 +104,11 @@ $char-entrance-time: 1s;
         margin: 0 auto 60px;
         transform: translateX(-50%);
 
-        @media (min-width: $breakpoint-medium) {
+        @media (min-width: $breakpoint-medium) and (min-height: $tall-up) {
             max-width: 600px;
         }
 
-        @media (min-width: $breakpoint-large) {
+        @media (min-width: $breakpoint-large) and (min-height: $tall-up) {
             margin-bottom: 180px;
             max-width: 1040px;
         }
@@ -129,11 +121,11 @@ $char-entrance-time: 1s;
         margin: 0;
         padding: 0;
 
-        @media (min-width: $breakpoint-medium) {
+        @media (min-width: $breakpoint-medium) and (min-height: $tall-up) {
             font-size: 40px;
         }
 
-        @media (min-width: $breakpoint-large) {
+        @media (min-width: $breakpoint-large) and (min-height: $tall-up) {
             font-size: 50px;
         }
 
@@ -156,19 +148,21 @@ $char-entrance-time: 1s;
 
 .character {
     position: absolute;
-    bottom: 0;
-    left: 0;
     width: 32px;
     height: 48px;
     background: url(#{$images-path}/astronaut.svg) no-repeat bottom;
     background-size: contain;
     transform: translateX(-50%);
 
-    @media (min-width: $breakpoint-large) {
+    @media (min-width: $breakpoint-large) and (min-height: $tall-up) {
         width: 77px;
         height: 106px;
     }
+}
 
+.character-1 {
+    bottom: 0;
+    left: 0;
 }
 
 .overlay {
@@ -195,11 +189,11 @@ $char-entrance-time: 1s;
     font-family: $font-russo;
     line-height: 1.2;
 
-    @media (min-width: $breakpoint-medium) {
+    @media (min-width: $breakpoint-medium) and (min-height: $tall-up) {
         font-size: 60px;
     }
 
-    @media (min-width: $breakpoint-large) {
+    @media (min-width: $breakpoint-large) and (min-height: $tall-up) {
         font-size: 100px;
     }
 }
@@ -212,7 +206,7 @@ $char-entrance-time: 1s;
     bottom: $ground-height;
     z-index: 1;
 
-    @media (min-width: $breakpoint-medium) {
+    @media (min-width: $breakpoint-large) and (min-height: $tall-up) {
         left: 9%;
         width: 210px;
     }

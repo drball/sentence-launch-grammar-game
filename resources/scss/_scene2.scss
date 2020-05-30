@@ -5,16 +5,18 @@
     line-height: 1.05;
     text-shadow: transparentize(black,0.9) 0 5px 5px;
     letter-spacing: -0.02em;
+    margin: 20px auto 0;
 
-    @media (min-width: $breakpoint-medium) {
+    @media (min-width: $breakpoint-medium) and (min-height: $tall-up) {
         font-size: 60px;
     }
 
-    @media (min-width: $breakpoint-large) {
+    @media (min-width: $breakpoint-large) and (min-height: $tall-up) {
         font-size: 80px;
+        margin-top: 30px
     }
 
-    @media (min-width: $breakpoint-xlarge) {
+    @media (min-width: $breakpoint-xlarge) and (min-height: $tall-up) {
         font-size: 100px;
     }
 }
@@ -26,9 +28,6 @@
     padding: 0 1rem;
     height: 100%;
     align-items: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
     opacity: 0;
     transform: scale(0.96);
     transition: opacity 150ms, transform 150ms;
@@ -52,6 +51,10 @@
     left: 50%;
     transform: translateX(-50%);
     z-index: 10;
+
+    @media (min-width: $breakpoint-large) and (min-height: $tall-up) {
+        max-width: 1000px;
+    }
 }
 
 .answers {
@@ -59,10 +62,6 @@
     text-align: center;
     justify-content: center;
     flex-wrap: wrap;
-
-    @media (min-width: #{$breakpoint-medium}) {
-        display: flex;
-    }
 
     &__title {
         font-size: 21px;

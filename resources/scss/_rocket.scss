@@ -17,9 +17,13 @@
     &__rocket {
         background: url(#{$images-path}/rocket.svg) no-repeat center;
         background-size: contain;
-        width: 290px;
+        width: 130px;
         height: 0;
         padding: 0 0 157.7%;
+
+        @media (min-width: #{$breakpoint-medium}) and (min-height: $tall-up) {
+            width: 290px;
+        }
     }
 
     &__countdown-wrapper {
@@ -36,7 +40,7 @@
         line-height: 1;
         font-weight: bold;
 
-        @media (min-width: #{$breakpoint-medium}) {
+        @media (min-width: #{$breakpoint-medium}) and (min-height: $tall-up) {
             font-size: 74px;
         }
 
@@ -54,7 +58,7 @@
         transform: translateX(-50%);
         position: absolute;
         left: 50%;
-        top: 365px;
+        top: 81%;
         z-index: -1;
         opacity: 0;
 
@@ -65,14 +69,16 @@
 }
 
 .launchpad {
-    background: url(#{$images-path}/launchpad.svg) no-repeat center;
-    background-size: contain;
-    width: 320px;
-    height: 29px;
+    width: 220px;
+    height: auto;
     padding: 0;
     margin: 0;
     position: absolute;
     bottom: $ground-height;
     right: 10px;
     z-index: 1;
+
+    @media (min-width: #{$breakpoint-medium}) and (min-height: $tall-up) {
+        width: 320px;
+    }
 }
