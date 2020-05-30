@@ -7,8 +7,8 @@ $char-entrance-time: 1s;
     background: $btn-bg;
     color: #444444;
     border: 0;
-    padding: 20px 80px;
-    font-size: 60px;
+    padding: 10px 40px;
+    font-size: 30px;
     font-family: $sans-serif;
     font-weight: bold;
     position: absolute;
@@ -18,14 +18,14 @@ $char-entrance-time: 1s;
     border-radius: 5px;
     cursor: pointer;
     transition: background $transition-time;
-    line-height: 1.2;
+    line-height: 1;
     z-index: 1;
 
     @media (min-width: $breakpoint-medium) {
         //font-size: 60px;
     }
 
-    @media (min-width: $breakpoint-large) {
+    @media (min-width: $breakpoint-medium) {
         font-size: 80px;
         padding: 20px 100px;
     }
@@ -64,16 +64,17 @@ $char-entrance-time: 1s;
 .start-instruction {
     $bg: #D3DEEF;
     background: $bg;
-    border-radius: 50px;
-    padding: 25px 35px;
+    border-radius: 20px;
+    padding: 10px 15px;
     position: relative;
     animation: fade-grow-in 200ms ease-out;
     animation-delay: $overlay-delay + $char-entrance-time;
     animation-fill-mode: forwards;
     opacity: 0;
 
-    @media (min-width: $breakpoint-large) {
-        padding: 50px 70px;
+    @media (min-width: $breakpoint-medium) {
+        padding: 20px 30px;
+        border-radius: 50px;
     }
 
     &:after {
@@ -81,18 +82,23 @@ $char-entrance-time: 1s;
         content: "";
         display: block;
         position: absolute;
-        bottom: -60px;
-        left: calc(50% + 30px);
+        bottom: -20px;
+        left: calc(50% + 15px);
         width: 0;
         height: 0;
         border-left: 0 solid transparent;
-        border-right: 30px solid transparent;
-        border-top: 60px solid $bg;
+        border-right: 10px solid transparent;
+        border-top: 20px solid $bg;
+
+        @media (min-width: $breakpoint-medium) {
+
+        }
 
         @media (min-width: $breakpoint-large) {
-            bottom: -100px;
-            border-right: 60px solid transparent;
-            border-top: 100px solid $bg;
+            bottom: -60px;
+            border-right: 40px solid transparent;
+            border-top: 60px solid $bg;
+            left: calc(50% + 25px);
         }
     }
 
@@ -102,9 +108,13 @@ $char-entrance-time: 1s;
 
     &__wrapper {
         width: calc(100vw - 60px);
-        max-width: 600px;
-        margin: 0 auto 160px;
+        max-width: 400px;
+        margin: 0 auto 60px;
         transform: translateX(-50%);
+
+        @media (min-width: $breakpoint-medium) {
+            max-width: 600px;
+        }
 
         @media (min-width: $breakpoint-large) {
             margin-bottom: 180px;
@@ -115,9 +125,13 @@ $char-entrance-time: 1s;
     &__text {
         color: #277CCB;
         text-align: center;
-        font-size: 22px;
+        font-size: 20px;
         margin: 0;
         padding: 0;
+
+        @media (min-width: $breakpoint-medium) {
+            font-size: 40px;
+        }
 
         @media (min-width: $breakpoint-large) {
             font-size: 50px;
@@ -137,21 +151,22 @@ $char-entrance-time: 1s;
     animation: move-from-left $char-entrance-time linear;
     animation-fill-mode: both;
     animation-delay: $overlay-delay;
-    //opacity: 0;
+    z-index: 1;
 }
 
 .character {
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 77px;
-    height: 106px;
+    width: 32px;
+    height: 48px;
     background: url(#{$images-path}/astronaut.svg) no-repeat bottom;
     background-size: contain;
     transform: translateX(-50%);
 
     @media (min-width: $breakpoint-large) {
-
+        width: 77px;
+        height: 106px;
     }
 
 }
@@ -180,7 +195,38 @@ $char-entrance-time: 1s;
     font-family: $font-russo;
     line-height: 1.2;
 
+    @media (min-width: $breakpoint-medium) {
+        font-size: 60px;
+    }
+
     @media (min-width: $breakpoint-large) {
         font-size: 100px;
+    }
+}
+
+.rocket-bg {
+    width: 15vw;
+    height: auto;
+    position: absolute;
+    left: 5%;
+    bottom: $ground-height;
+    z-index: 1;
+
+    @media (min-width: $breakpoint-medium) {
+        left: 9%;
+        width: 210px;
+    }
+}
+
+.cloud-1 {
+    width: 16vw;
+    height: auto;
+    position: absolute;
+    right: 6%;
+    top: 25%;
+    opacity: 0.6;
+
+    @media (min-width: $breakpoint-medium) {
+
     }
 }

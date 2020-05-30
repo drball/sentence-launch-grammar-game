@@ -10,9 +10,9 @@ $text-dark: #444;
 $font-russo: 'Russo One', sans-serif;
 $font-nunito: "Nunito",sans-serif;
 $sans-serif: $font-nunito;
-$breakpoint-medium: 640px;
-$breakpoint-large: 1024px;
-$breakpoint-xlarge: 1200px;
+$breakpoint-medium: 850px;
+$breakpoint-large: 1200px;
+$breakpoint-xlarge: 1400px;
 
 html,
 body {
@@ -29,7 +29,7 @@ body {
 .rotate-message {
     display: none;
 
-    @media (max-width: #{$breakpoint-medium}) and (orientation: portrait) {
+    @media (max-width: #{$breakpoint-large}) and (orientation: portrait) {
         display: block;
         position: absolute;
         top: 0;
