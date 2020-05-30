@@ -57,16 +57,12 @@ $char-entrance-time: 1s;
     }
 }
 
-.start-instruction {
+.speech-bubble {
     $bg: #D3DEEF;
     background: $bg;
     border-radius: 20px;
     padding: 10px 15px;
     position: relative;
-    animation: fade-grow-in 200ms ease-out;
-    animation-delay: $overlay-delay + $char-entrance-time;
-    animation-fill-mode: forwards;
-    opacity: 0;
 
     @media (min-width: $breakpoint-medium) and (min-height: $tall-up) {
         padding: 20px 30px;
@@ -94,25 +90,6 @@ $char-entrance-time: 1s;
         }
     }
 
-    .char {
-        opacity: 0;
-    }
-
-    &__wrapper {
-        width: calc(100vw - 60px);
-        max-width: 400px;
-        margin: 0 auto 60px;
-        transform: translateX(-50%);
-
-        @media (min-width: $breakpoint-medium) and (min-height: $tall-up) {
-            max-width: 600px;
-        }
-
-        @media (min-width: $breakpoint-large) and (min-height: $tall-up) {
-            margin-bottom: 180px;
-            max-width: 1040px;
-        }
-    }
 
     &__text {
         color: #277CCB;
@@ -134,6 +111,35 @@ $char-entrance-time: 1s;
             font-style: normal;
         }
     }
+}
+
+.start-instruction {
+    animation: fade-grow-in 200ms ease-out;
+    animation-delay: $overlay-delay + $char-entrance-time;
+    animation-fill-mode: forwards;
+    opacity: 0;
+
+    .char {
+        opacity: 0;
+    }
+
+    &__wrapper {
+        width: calc(100vw - 60px);
+        max-width: 400px;
+        margin: 0 auto 60px;
+        transform: translateX(-50%);
+
+        @media (min-width: $breakpoint-medium) and (min-height: $tall-up) {
+            max-width: 600px;
+        }
+
+        @media (min-width: $breakpoint-large) and (min-height: $tall-up) {
+            margin-bottom: 180px;
+            max-width: 1040px;
+        }
+    }
+
+
 }
 
 .character-wrapper {
