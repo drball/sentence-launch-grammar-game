@@ -5,13 +5,14 @@ $(document).ready(function() {
       Each character will have class of "char"
       Each line will have a class of "line"
     */
-    instructionInstance = new SplitType('.split-type-chars',{
+    startInstructionInstance = new SplitType('.start-instruction .split-type-chars',{
         split: 'chars,lines'
     });
 
     var initialDelay = 2.5;
 
     setTimeout(function() {
+
         $(".start-instruction").each(function( index ) {
 
             var chars = $(this).find(".char").toArray();
@@ -20,15 +21,48 @@ $(document).ready(function() {
 
             TweenMax.staggerTo(chars, 0.2, {opacity: 1, ease: Linear.easeNone}, duration);
 
+            console.log("initial delay is = "+ initialDelay);
+            //--revert to normal text after animation has finished
+            setTimeout(function(){
+                startInstructionInstance.revert();
+            }, (initialDelay)*2000);
+
+        });
+
+    }, (initialDelay)*1000);
+
+
+});
+
+
+
+function answersInstructionTypewriter(){
+
+    var initialDelay = 4;
+
+    answersInstructionInstance = new SplitType('.answers-instruction .split-type-chars',{
+        split: 'chars,lines'
+    });
+
+    setTimeout(function() {
+
+        $(".answers-instruction").each(function( index ) {
+
+            var chars = $(this).find(".char").toArray();
+
+            var duration = 0.06;
+
+            console.log("here");
+
+            TweenMax.staggerTo(chars, 0.2, {opacity: 1, ease: Linear.easeNone}, duration);
+
 
             //--revert to normal text after animation has finished
             setTimeout(function(){
-                instructionInstance.revert();
+                answersInstructionInstance.revert();
             }, (initialDelay)*2000);
 
         });
     }, (initialDelay)*1000);
+}
 
-
-
-});

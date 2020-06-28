@@ -21,8 +21,11 @@ function playButtonPressed() {
 
         setTimeout(function() {
             startGame();
+            answersInstructionTypewriter();
         }, 500);
     }
+
+
 }
 
 function menuButtonPressed() {

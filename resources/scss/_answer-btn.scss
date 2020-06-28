@@ -96,8 +96,7 @@
             font-size: 75px;
         }
 
-        #{$c}:hover &,
-        #{$c}:active & {
+        #{$c}:hover & {
             background: darken($btn-bg,20%);
         }
     }

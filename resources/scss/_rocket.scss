@@ -1,8 +1,13 @@
 .rocket {
     $c: &;
     position: absolute;
-    bottom: calc(#{$ground-height} + #{$launchpad-height});
-    right: 30px;
+    bottom: calc(#{$ground-height} + 19px);
+    right: 50px;
+
+    @media (min-width: #{$breakpoint-medium}) and (min-height: $tall-up) {
+        bottom: calc(#{$ground-height} + #{$launchpad-height});
+        right: 30px;
+    }
 
     &--active {
         animation: rocket-launch-anim 9s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
@@ -34,14 +39,15 @@
     }
 
     &__countdown {
-        font-size: 40px;
+        font-size: 30px;
         text-align: center;
         color: white;
-        line-height: 1;
+        line-height: 1.2;
         font-weight: bold;
 
         @media (min-width: #{$breakpoint-medium}) and (min-height: $tall-up) {
             font-size: 74px;
+            line-height: 1;
         }
 
         &.flash {
@@ -69,7 +75,7 @@
 }
 
 .launchpad {
-    width: 220px;
+    width: 210px;
     height: auto;
     padding: 0;
     margin: 0;

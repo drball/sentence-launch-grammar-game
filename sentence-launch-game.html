@@ -41,7 +41,13 @@
     <div class="screen screen-2">
         <div class="ground"></div>
 
-        <img src="images/astronaut.svg" alt="" class="character character-2">
+        <div class="answers-instruction__wrapper">
+            <div class="speech-bubble answers-instruction">
+                <h2 class="speech-bubble__text split-type-chars">What type of sentence is this?</h2>
+            </div>
+        </div>
+
+        <img src="images/astronaut.svg" alt="" class="character answers-instruction__character">
 
         <button class="menu-button" onclick="menuButtonPressed()">?</button>
 
@@ -50,9 +56,7 @@
         </div>
 
         <div class="answers-container">
-            <div class="speech-bubble answers__title">
-                <h2 class="speech-bubble__text">What type of sentence is this?</h2>
-            </div>
+
             <div class="answers">
                 <button class="answer" data-type="Statement" onclick="answerPressed(this)">
                     <span class="answer__inner">
@@ -109,59 +113,59 @@
         <source src="sfx/rocket-9sec.mp3" type="audio/mpeg">
     </audio>
 
-    <audio id="button-click-sfx">
+    <audio id="button-click-sfx" preload="auto">
         <source src="sfx/click.mp3" type="audio/mpeg">
     </audio>
 
-    <audio id="correct-sfx">
+    <audio id="correct-sfx" preload="auto">
         <source src="sfx/correct.mp3" type="audio/mpeg">
     </audio>
 
-    <audio id="wrong-sfx">
+    <audio id="wrong-sfx" preload="auto">
         <source src="sfx/wrong.mp3" type="audio/mpeg">
     </audio>
 
-    <audio id="countdown-0-sfx">
+    <audio id="countdown-0-sfx" preload="auto">
         <source src="sfx/0.mp3" type="audio/mpeg">
     </audio>
 
-    <audio id="countdown-1-sfx">
+    <audio id="countdown-1-sfx" preload="auto">
         <source src="sfx/1.mp3" type="audio/mpeg">
     </audio>
 
-    <audio id="countdown-2-sfx">
+    <audio id="countdown-2-sfx" preload="auto">
         <source src="sfx/2.mp3" type="audio/mpeg">
     </audio>
 
-    <audio id="countdown-3-sfx">
+    <audio id="countdown-3-sfx" preload="auto">
         <source src="sfx/3.mp3" type="audio/mpeg">
     </audio>
 
-    <audio id="countdown-4-sfx">
+    <audio id="countdown-4-sfx" preload="auto">
         <source src="sfx/4.mp3" type="audio/mpeg">
     </audio>
 
-    <audio id="countdown-5-sfx">
+    <audio id="countdown-5-sfx" preload="auto">
         <source src="sfx/5.mp3" type="audio/mpeg">
     </audio>
 
-    <audio id="countdown-6-sfx">
+    <audio id="countdown-6-sfx" preload="auto">
         <source src="sfx/6.mp3" type="audio/mpeg">
     </audio>
 
-    <audio id="countdown-7-sfx">
+    <audio id="countdown-7-sfx" preload="auto">
         <source src="sfx/7.mp3" type="audio/mpeg">
     </audio>
 
-    <audio id="countdown-8-sfx">
+    <audio id="countdown-8-sfx" preload="auto">
         <source src="sfx/8.mp3" type="audio/mpeg">
     </audio>
 
-    <audio id="countdown-9-sfx">
+    <audio id="countdown-9-sfx" preload="auto">
         <source src="sfx/9.mp3" type="audio/mpeg">
     </audio>
 
-    <audio id="countdown-10-sfx">
+    <audio id="countdown-10-sfx" preload="auto">
         <source src="sfx/10.mp3" type="audio/mpeg">
     </audio>
 </div>
