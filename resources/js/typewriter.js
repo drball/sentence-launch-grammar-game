@@ -21,7 +21,6 @@ $(document).ready(function() {
 
             TweenMax.staggerTo(chars, 0.2, {opacity: 1, ease: Linear.easeNone}, duration);
 
-            console.log("initial delay is = "+ initialDelay);
             //--revert to normal text after animation has finished
             setTimeout(function(){
                 startInstructionInstance.revert();
@@ -52,10 +51,7 @@ function answersInstructionTypewriter(){
 
             var duration = 0.06;
 
-            console.log("here");
-
             TweenMax.staggerTo(chars, 0.2, {opacity: 1, ease: Linear.easeNone}, duration);
-
 
             //--revert to normal text after animation has finished
             setTimeout(function(){

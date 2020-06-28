@@ -8,7 +8,7 @@ $(document).ready(function() {
 
 function playButtonPressed() {
 
-    console.log("pressed");
+    // console.log("pressed");
 
     var game = $(".game");
 
@@ -39,7 +39,7 @@ function menuButtonPressed() {
 }
 
 function startGame(){
-    console.log("start");
+    // console.log("start");
     $(".countdown").text(totalQuestions);
     $(".rocket").removeClass("rocket--active");
     showNewQuestion();
@@ -47,7 +47,7 @@ function startGame(){
 
 function showNewQuestion(){
 
-    console.log("show new question");
+    // console.log("show new question");
 
     //--random question - but NOT the previous one
     questionNum = Math.floor(Math.random() * questions.length);
@@ -106,22 +106,22 @@ function answerPressed(btn){
 
             setTimeout(function() {
                 countdown.removeClass("flash");
-                console.log("remove flash");
+                // console.log("remove flash");
             }, 900);
 
             //--play the appropriate countdown sfx
-            console.log("play sfx "+countdownNum);
+            // console.log("play sfx "+countdownNum);
             document.getElementById("countdown-"+newCountdownNum+"-sfx").play();
 
             if(countdownNum > 1){
                 //--show a new question - after the animation is finished
-                console.log("set a new question in a bit");
+                // console.log("set a new question in a bit");
                 setTimeout(function() {
                     showNewQuestion();
                 }, 1250);
             } else {
                 //--game completed
-                console.log("lift off!");
+                // console.log("lift off!");
                 $(".rocket").addClass("rocket--active");
                 $(".question-container").removeClass("question-container--active");
                 document.getElementById("rocket-launch-sfx").play();
